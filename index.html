@@ -64,8 +64,11 @@
         detectRetina: true
     });
 
-    // 2. Add a base map. (https so it loads on GitHub Pages)
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png').addTo(mymap);
+    // 2. Add a base map (Esri Light Gray Canvas - free, no API key needed).
+    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
+        maxNativeZoom: 16, // Esri tiles stop at 16; Leaflet stretches them for zooms 17-18
+        maxZoom: 18
+    }).addTo(mymap);
 
     // 3. Null variable that will hold the Airbnb data.
     var airbnb_listings = null;
@@ -90,7 +93,7 @@
             else { id = 2; } // All other property types from attribute table
             return L.marker(latlng, {icon: L.divIcon({className: 'fab fa-airbnb marker-color-' + (id + 1).toString() })});
         },
-        attribution: 'Airbnb Listings &copy; Inside Airbnb | Asheville Zoning Districts &copy; City of Asheville Open Data | Base Map &copy; CartoDB | Map Author: Joshua Turner'
+        attribution: 'Airbnb Listings &copy; Inside Airbnb | Asheville Zoning Districts &copy; City of Asheville Open Data | Base Map &copy; Esri | Map Author: Joshua Turner'
     });
 
     // 6. Set function for color ramp (5 classes of purples).

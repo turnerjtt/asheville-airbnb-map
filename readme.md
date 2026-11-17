@@ -8,6 +8,6 @@ A bivariate web map of 2020 Airbnb listings in Asheville, North Carolina.
 - **Choropleth layer:** Asheville zoning districts shaded by the total number of Airbnbs in each district (5 equal-interval classes).
 - **Map elements:** legend, scale bar, and source attribution.
 
-**Libraries:** Leaflet, leaflet-ajax, chroma.js, jQuery, Font Awesome, Google Fonts (Titillium Web), and the CARTO Light basemap.
+**Libraries:** Leaflet, leaflet-ajax, chroma.js, jQuery, Font Awesome, Google Fonts (Titillium Web), and the Esri Light Gray Canvas basemap.
 
 **Data sources:** [Inside Airbnb](http://insideairbnb.com/) and City of Asheville Open Data.
